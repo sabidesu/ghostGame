@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6g2olvi3lmjk"
-path="res://.godot/imported/look 2.png-eb06412e78475c52329dc9e7c79119b4.ctex"
+uid="uid://hof61xsenhm"
+path="res://.godot/imported/look 1.png-d8ac550d81b0967085e55d398eadd30e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/original/ghosts/look 2.png"
-dest_files=["res://.godot/imported/look 2.png-eb06412e78475c52329dc9e7c79119b4.ctex"]
+source_file="res://assets/sprites/original/ghosts/look 1.png"
+dest_files=["res://.godot/imported/look 1.png-d8ac550d81b0967085e55d398eadd30e.ctex"]
 
 [params]
 

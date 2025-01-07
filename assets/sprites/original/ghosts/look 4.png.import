@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ci6jywo3xyslw"
-path="res://.godot/imported/camera screen.png-587d300f28a8c01b4a4331a7a81ce8c5.ctex"
+uid="uid://263n1hjtfq6s"
+path="res://.godot/imported/look 4.png-d5bfd7d748e93f4728b5984323909ccb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/original/camera/camera screen.png"
-dest_files=["res://.godot/imported/camera screen.png-587d300f28a8c01b4a4331a7a81ce8c5.ctex"]
+source_file="res://assets/sprites/original/ghosts/look 4.png"
+dest_files=["res://.godot/imported/look 4.png-d5bfd7d748e93f4728b5984323909ccb.ctex"]
 
 [params]
 

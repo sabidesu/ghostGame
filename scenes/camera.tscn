@@ -8,8 +8,8 @@ size = Vector2(180, 140)
 [node name="camera" type="CharacterBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -20)
 texture = ExtResource("1_cxywi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 20)
 shape = SubResource("RectangleShape2D_6qiu3")

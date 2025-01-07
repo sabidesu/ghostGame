@@ -1,9 +1,6 @@
 extends CharacterBody2D
 
 
-const SPEED = 300.0
-
-
 func _process(_delta: float) -> void:
 	var screen_size_x: int = get_viewport().size.x
 	var screen_size_y: int = get_viewport().size.y

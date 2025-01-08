@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://scripts/ghost.gd" id="1_6nqbi"]
 [ext_resource type="Texture2D" uid="uid://c6g2olvi3lmjk" path="res://assets/sprites/original/ghosts/look 2.png" id="1_k77st"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dknoy"]
-size = Vector2(96, 93)
+[sub_resource type="CircleShape2D" id="CircleShape2D_6o2us"]
+radius = 46.0109
 
 [node name="ghost" type="Area2D"]
 script = ExtResource("1_6nqbi")
@@ -13,7 +13,9 @@ script = ExtResource("1_6nqbi")
 texture = ExtResource("1_k77st")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1.5)
-shape = SubResource("RectangleShape2D_dknoy")
+position = Vector2(-2, 6)
+shape = SubResource("CircleShape2D_6o2us")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="ready" from="." to="." method="_on_ready"]

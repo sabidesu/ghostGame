@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://bqxavpbpwaox0"]
+[gd_scene load_steps=4 format=3 uid="uid://bqxavpbpwaox0"]
 
+[ext_resource type="Script" path="res://scripts/ghost.gd" id="1_6nqbi"]
 [ext_resource type="Texture2D" uid="uid://c6g2olvi3lmjk" path="res://assets/sprites/original/ghosts/look 2.png" id="1_k77st"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dknoy"]
 size = Vector2(96, 93)
 
 [node name="ghost" type="Area2D"]
+script = ExtResource("1_6nqbi")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_k77st")
@@ -13,3 +15,5 @@ texture = ExtResource("1_k77st")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_dknoy")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,6 +1,9 @@
 extends CharacterBody2D
 
 
+signal camera_shutter
+
+
 func _process(_delta: float) -> void:
 	var screen_size_x: int = get_viewport().size.x
 	var screen_size_y: int = get_viewport().size.y
@@ -12,3 +15,5 @@ func _process(_delta: float) -> void:
 	if mouse_position_y >= 0 && mouse_position_y <= screen_size_y:
 		position.y = mouse_position_y
 
+	if Input.is_action_just_pressed("click"):
+		camera_shutter.emit()

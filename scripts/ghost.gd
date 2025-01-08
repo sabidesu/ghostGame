@@ -1,7 +1,7 @@
 extends Area2D
 
 
-@onready var camera = %Camera
+@onready var camera: CharacterBody2D = %Camera
 
 var camera_hovering: bool = false
 

@@ -5,6 +5,13 @@ signal camera_shutter
 
 
 func _process(_delta: float) -> void:
+	camera_movement()
+
+	if Input.is_action_just_pressed("click"):
+		camera_shutter.emit()
+
+
+func camera_movement() -> void:
 	var screen_size_x: int = get_viewport().size.x
 	var screen_size_y: int = get_viewport().size.y
 	var mouse_position_x: float = get_viewport().get_mouse_position().x
@@ -14,6 +21,3 @@ func _process(_delta: float) -> void:
 		position.x = mouse_position_x
 	if mouse_position_y >= 0 && mouse_position_y <= screen_size_y:
 		position.y = mouse_position_y
-
-	if Input.is_action_just_pressed("click"):
-		camera_shutter.emit()

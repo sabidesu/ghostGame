@@ -35,6 +35,9 @@ func _on_camera_shutter() -> void:
 func _process(delta: float) -> void:
   modulate.a += opacity_increment * delta
 
-  if timer.is_stopped():
+  if timer.time_left <= timer.wait_time / 2:
     state = States.RIPE
+    print('getting there')
+
+  if timer.is_stopped():
     print('ya juice is ready')

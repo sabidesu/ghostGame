@@ -3,7 +3,6 @@ extends Area2D
 
 @onready var camera: CharacterBody2D = %Camera
 @onready var timer: Timer = $Timer
-@onready var sprite: Sprite2D = $Sprite2D
 
 enum States {FRESH, RIPE}
 
@@ -14,7 +13,7 @@ var opacity_increment: float
 
 func _on_ready() -> void:
   opacity_increment = 1 / timer.wait_time
-  sprite.set_modulate(Color(1, 1, 1, 0))
+  set_modulate(Color(1, 1, 1, 0))
   camera.camera_shutter.connect(_on_camera_shutter)
 
 
@@ -33,7 +32,7 @@ func _on_camera_shutter() -> void:
 
 func _process(delta: float) -> void:
   var opacity: float = modulate.a + (opacity_increment * delta)
-  sprite.set_modulate(Color(1, 1, 1, opacity))
+  set_modulate(Color(1, 1, 1, opacity))
 
   if timer.is_stopped():
     state = States.RIPE

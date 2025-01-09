@@ -17,12 +17,14 @@ func _on_ready() -> void:
   camera.camera_shutter.connect(_on_camera_shutter)
 
 
-func _on_body_entered(_body:Node2D) -> void:
-  camera_hovering = true
+func _on_body_entered(body:Node2D) -> void:
+  if body == %Camera:
+    camera_hovering = true
 
 
-func _on_body_exited(_body:Node2D) -> void:
-  camera_hovering = false
+func _on_body_exited(body:Node2D) -> void:
+  if body == %Camera:
+    camera_hovering = false
 
 
 func _on_camera_shutter() -> void:

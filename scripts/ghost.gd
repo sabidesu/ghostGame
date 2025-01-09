@@ -33,8 +33,7 @@ func _on_camera_shutter() -> void:
 
 
 func _process(delta: float) -> void:
-  var opacity: float = modulate.a + (opacity_increment * delta)
-  set_modulate(Color(1, 1, 1, opacity))
+  modulate.a += opacity_increment * delta
 
   if timer.is_stopped():
     state = States.RIPE

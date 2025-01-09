@@ -39,5 +39,8 @@ func _process(delta: float) -> void:
     state = States.RIPE
     print('getting there')
 
+  if state == States.RIPE:
+    modulate.g = 0
+
   if timer.is_stopped():
     print('ya juice is ready')

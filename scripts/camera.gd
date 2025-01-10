@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 
 @onready var reload_timer = $ReloadTimer
+@onready var collision_shape = $CollisionShape2D
 
 signal camera_shutter
 
@@ -21,6 +22,10 @@ func _process(_delta: float) -> void:
 		camera_shutter.emit()
 		state = States.DISABLED
 		reload_timer.start()
+
+	if Input.is_action_just_pressed("HideCamera"):
+		visible = !visible
+		collision_shape.disabled = !collision_shape.disabled
 
 
 func camera_movement() -> void:

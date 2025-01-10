@@ -17,7 +17,7 @@ func _on_ready() -> void:
 func _process(_delta: float) -> void:
 	camera_movement()
 
-	if state == States.READY && Input.is_action_just_pressed("click"):
+	if state == States.READY && Input.is_action_just_pressed("TakePicture"):
 		camera_shutter.emit()
 		state = States.DISABLED
 		reload_timer.start()

@@ -2,6 +2,7 @@ extends Area2D
 
 
 @onready var camera: CharacterBody2D = %Camera
+@onready var coyote_timer: Timer = $CoyoteTimer
 
 enum States {FRESH, RIPE}
 
@@ -15,6 +16,7 @@ func _on_ready() -> void:
   visible = false
   set_modulate(Color(1, 1, 1, 0))
   camera.camera_shutter.connect(_on_camera_shutter)
+  coyote_timer.timeout.connect(_on_coyote_timer_timeout)
 
 
 func _on_body_entered(body: Node2D) -> void:
@@ -43,3 +45,12 @@ func _process(delta: float) -> void:
 
   if state == States.RIPE:
     modulate.g = 0
+
+  if state == States.RIPE && modulate.a >= 1:
+    coyote_timer.start()
+
+
+func _on_coyote_timer_timeout() -> void:
+  # todo: fix coyote timer not working
+  print('timer timeout')
+  pass

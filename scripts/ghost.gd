@@ -17,13 +17,13 @@ func _on_ready() -> void:
   camera.camera_shutter.connect(_on_camera_shutter)
 
 
-func _on_body_entered(body:Node2D) -> void:
+func _on_body_entered(body: Node2D) -> void:
   if body == %Camera:
     visible = true
     camera_hovering = true
 
 
-func _on_body_exited(body:Node2D) -> void:
+func _on_body_exited(body: Node2D) -> void:
   if body == %Camera:
     visible = false
     camera_hovering = false

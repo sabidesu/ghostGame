@@ -2,6 +2,7 @@ extends Area2D
 
 
 @onready var camera: CharacterBody2D = %Camera
+@onready var game_manager: Node = %GameManager
 @onready var coyote_timer: Timer = $CoyoteTimer
 
 enum States {FRESH, RIPE}
@@ -51,4 +52,4 @@ func _process(delta: float) -> void:
 
 
 func _on_coyote_timer_timeout() -> void:
-  print('game over')
+  game_manager.subtract_health()

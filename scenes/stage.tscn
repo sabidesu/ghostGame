@@ -1,13 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://sx7u6hlvonpk"]
+[gd_scene load_steps=4 format=3 uid="uid://sx7u6hlvonpk"]
 
+[ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_57ape"]
 [ext_resource type="PackedScene" uid="uid://bm316jv54b27h" path="res://scenes/camera.tscn" id="1_78rxb"]
 [ext_resource type="PackedScene" uid="uid://bqxavpbpwaox0" path="res://scenes/ghost.tscn" id="2_we877"]
 
 [node name="Stage" type="Node2D"]
+
+[node name="GameManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_57ape")
 
 [node name="Camera" parent="." instance=ExtResource("1_78rxb")]
 unique_name_in_owner = true
 position = Vector2(169, 423)
 
 [node name="Ghost" parent="." instance=ExtResource("2_we877")]
-position = Vector2(750, 336)
+position = Vector2(900, 326)
+
+[node name="Ghost2" parent="." instance=ExtResource("2_we877")]
+position = Vector2(1008, 461)
+
+[node name="Ghost3" parent="." instance=ExtResource("2_we877")]
+position = Vector2(982, 166)

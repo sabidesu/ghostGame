@@ -1,7 +1,8 @@
 extends Node
 
 
-var health: int = 3
+@export var ghost_lifespan: float = 3.0
+@export var health: int = 3
 
 
 func subtract_health():

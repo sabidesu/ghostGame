@@ -9,13 +9,16 @@ enum States {FRESH, RIPE, ATTACK}
 
 var camera_hovering: bool = false
 var state: States = States.FRESH
-var opacity_transition_time: float = 3.0
-var opacity_increment: float = 1 / opacity_transition_time
-
+var opacity_transition_time: float
+var opacity_increment: float
 
 func _on_ready() -> void:
   visible = false
+  opacity_transition_time = game_manager.ghost_lifespan
+  opacity_increment = 1 / opacity_transition_time
+
   set_modulate(Color(1, 1, 1, 0))
+
   camera.camera_shutter.connect(_on_camera_shutter)
   coyote_timer.timeout.connect(_on_coyote_timer_timeout)
 

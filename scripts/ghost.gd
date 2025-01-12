@@ -46,11 +46,9 @@ func _process(delta: float) -> void:
   if state == States.RIPE:
     modulate.g = 0
 
-  if state == States.RIPE && modulate.a >= 1:
+  if state == States.RIPE && modulate.a >= 1 && coyote_timer.is_stopped():
     coyote_timer.start()
 
 
 func _on_coyote_timer_timeout() -> void:
-  # todo: fix coyote timer not working
-  print('timer timeout')
-  pass
+  print('game over')

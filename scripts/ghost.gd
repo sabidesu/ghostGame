@@ -5,7 +5,7 @@ extends Area2D
 @onready var game_manager: Node = %GameManager
 @onready var coyote_timer: Timer = $CoyoteTimer
 
-enum States {FRESH, RIPE}
+enum States {FRESH, RIPE, ATTACK}
 
 var camera_hovering: bool = false
 var state: States = States.FRESH
@@ -41,15 +41,19 @@ func _process(delta: float) -> void:
   if visible:
     modulate.a += opacity_increment * delta
 
-  if visible && modulate.a >= 0.5:
-    state = States.RIPE
-
-  if state == States.RIPE:
-    modulate.g = 0
-
-  if state == States.RIPE && modulate.a >= 1 && coyote_timer.is_stopped():
-    coyote_timer.start()
+  match state:
+    States.FRESH:
+      if visible && modulate.a >= 0.5:
+        state = States.RIPE
+    States.RIPE:
+      modulate.g = 0
+      if modulate.a >= 1 && coyote_timer.is_stopped():
+        coyote_timer.start()
+    States.ATTACK:
+      queue_free()
 
 
 func _on_coyote_timer_timeout() -> void:
+  print('attack')
   game_manager.subtract_health()
+  state = States.ATTACK

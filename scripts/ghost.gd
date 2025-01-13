@@ -20,7 +20,6 @@ func _on_ready() -> void:
   set_modulate(Color(1, 1, 1, 0))
 
   camera.camera_shutter.connect(_on_camera_shutter)
-  coyote_timer.timeout.connect(_on_coyote_timer_timeout)
 
 
 func _on_body_entered(body: Node2D) -> void:

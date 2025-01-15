@@ -16,3 +16,8 @@ autostart = true
 [node name="Camera" parent="." instance=ExtResource("1_78rxb")]
 unique_name_in_owner = true
 position = Vector2(169, 423)
+
+[node name="Ghosts" type="Node" parent="."]
+unique_name_in_owner = true
+
+[connection signal="timeout" from="GameManager/GhostSpawnTimer" to="GameManager" method="_on_ghost_spawn_timer_timeout"]

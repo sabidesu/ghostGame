@@ -1,8 +1,8 @@
 extends Area2D
 
 
-@onready var camera: CharacterBody2D = %Camera
-@onready var game_manager: Node = %GameManager
+@onready var camera: CharacterBody2D = get_node("/root/Stage/%Camera")
+@onready var game_manager: Node = get_node("/root/Stage/%GameManager")
 @onready var coyote_timer: Timer = $CoyoteTimer
 
 enum States {FRESH, RIPE, ATTACK}
@@ -23,13 +23,13 @@ func _on_ready() -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-  if body == %Camera:
+  if body == camera:
     visible = true
     camera_hovering = true
 
 
 func _on_body_exited(body: Node2D) -> void:
-  if body == %Camera:
+  if body == camera:
     visible = false
     camera_hovering = false
 

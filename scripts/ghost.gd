@@ -13,6 +13,7 @@ var opacity_transition_time: float
 var opacity_increment: float
 
 func _on_ready() -> void:
+  # TODO: set random texture on spawn
   visible = false
   opacity_transition_time = game_manager.ghost_lifespan
   opacity_increment = 1 / opacity_transition_time

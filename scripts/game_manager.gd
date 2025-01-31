@@ -9,7 +9,7 @@ extends Node
 var ghost_scene: PackedScene = load("res://scenes/ghost.tscn")
 
 
-func subtract_health():
+func subtract_health() -> void:
   health -= 1
 
 
